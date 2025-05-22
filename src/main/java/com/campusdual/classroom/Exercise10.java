@@ -9,6 +9,17 @@ public class Exercise10 {
     // El mensaje a imprimir es → La bola es de color: COLOR_BOLA
     // COLOR_BOLA puede ser → rojo, azul, verde
     public static void main(String[] args) {
+        String color;
+        int azul = 0;
+        String az = "azul";
+        do{
+            color = getBall();
+            System.out.println("La bola es de color: " + color);
+            if (color.equals(az)){
+                azul++;
+            }
+        } while(azul!=2);
+
 
     }
 
@@ -20,7 +31,12 @@ public class Exercise10 {
     // 2 → azul
     // 3 → verde
     public static String getBall() {
-        return null;
+        switch(randomWithRange(1,4)){
+            case 1: return "rojo";
+            case 2: return "azul";
+            case 3: return "verde";
+            default: return null;
+        }
     }
 
     public static int randomWithRange(int min, int max) {
